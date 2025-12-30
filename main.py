@@ -1,7 +1,9 @@
 import sys
 
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QIcon
 from PyQt5.QtGui import QPixmap
+from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import (
     QApplication,
     QCheckBox,
@@ -21,41 +23,26 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("IITD EQUIP LAB")
         self.setGeometry(100, 100, 1000, 600)
+        self.setWindowIcon(QIcon("iitdelhilogo.jpg"))
 
-app = QApplication(sys.argv)
-window = MainWindow()
-window.show()
-app.exec()
+        label = QLabel("TEMP & CURRENT MONITORING GUI", self)
+        label.setFont(QFont("Arial", 15))
+        label.setGeometry(0,0,1000,100)
+        label.setStyleSheet("color:pitchblack ;"
+                            "background-color:lightgrey;"
+                            "font-weight:bold;")
+        label.setAlignment(Qt.AlignCenter)
+        label.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
 
-widget = QLabel("TEMP & CURRENT MONITORING GUI")
-font = widget.font()
-font.setPointSize(30)
-widget.setFont(font)
-widget.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
 
-self.setCentralWidget(widget)
 
-widget = QLabel("1")  # The label is created with the text 1.
-widget.setText("2")   # The label now shows 2.
 
-class MainWindow(QMainWindow):
 
-    def __init__(self):
-        super().__init__()
-
-        self.setWindowTitle("IITD EQUIP LAB")
-
-        widget = QLabel("TEMP & CURRENT MONITORING GUI")
-        font = widget.font()
-        font.setPointSize(30)
-        widget.setFont(font)
-        widget.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
-
-        self.setCentralWidget(widget)
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()
     window.show()
+    sys.exit(app.exec_())  # Corrected to sys.exit(
     app.exec() 
