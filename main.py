@@ -19,7 +19,8 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("EQUIP GUI")
+        self.setWindowTitle("IITD EQUIP LAB")
+        self.setGeometry(100, 100, 1000, 600)
 
 app = QApplication(sys.argv)
 window = MainWindow()
@@ -42,7 +43,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("EQUIP GUI")
+        self.setWindowTitle("IITD EQUIP LAB")
 
         widget = QLabel("TEMP & CURRENT MONITORING GUI")
         font = widget.font()
@@ -51,3 +52,10 @@ class MainWindow(QMainWindow):
         widget.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
 
         self.setCentralWidget(widget)
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    app.exec() 
