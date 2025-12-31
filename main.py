@@ -15,7 +15,11 @@ from PyQt5.QtWidgets import (
     QMainWindow,
     QSlider,
     QSpinBox,
-)
+    QWidget,
+    QVBoxLayout,
+    QHBoxLayout,
+    QGridLayout)
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
