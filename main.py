@@ -79,8 +79,10 @@ class MainWindow(QMainWindow):
         layout = QGridLayout()
 
         labels = [
-            "Case Temperature", "LD Actual Temp.",
-            "PD current", "TEC Response",
+            "Case Temperature", 
+            "LD Actual Temp.",
+            "PD current", 
+            "TEC Response",
             "LD Temp. Setpoint"
         ]
 
