@@ -64,7 +64,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(QPushButton("Refresh"))
 
         self.port_box = QComboBox()
-        self.port_box.addItems(["COM1", "COM2", "COM5: SAMSUNG Mobile USB Modem"])
+        self.port_box.addItems(["COM1", "COM2", "COM3", "COM4"])
         layout.addWidget(self.port_box)
 
         layout.addWidget(QPushButton("Connect"))
