@@ -1,4 +1,5 @@
-import sys
+import sys, os
+
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon
@@ -11,7 +12,7 @@ from PyQt5.QtWidgets import (
     QDoubleSpinBox,
     QLabel,
     QLineEdit,
-    QListWidget,
+    QListWidget, 
     QMainWindow,
     QSlider,
     QSpinBox,
@@ -23,8 +24,10 @@ from PyQt5.QtWidgets import (
     QGroupBox,
     QSlider,
     QRadioButton,
+    QSystemTrayIcon,
     QLCDNumber)
  
+basedir = os.path.dirname(__file__)
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -33,6 +36,8 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("IITD EQUIP LAB")
         self.setGeometry(100, 100, 1000, 600)
         self.setWindowIcon(QIcon("iitdelhilogo.jpg"))
+
+        
 
         label = QLabel("TEMP & CURRENT MONITORING GUI", self)
         label.setFont(QFont("Arial", 15))
@@ -63,6 +68,7 @@ class MainWindow(QMainWindow):
 
         layout.addWidget(QPushButton("Refresh"))
 
+        
         self.port_box = QComboBox()
         self.port_box.addItems(["COM1", "COM2", "COM3", "COM4"])
         layout.addWidget(self.port_box)
@@ -191,7 +197,8 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    app.setWindowIcon(QIcon(os.path.join(basedir, "icons", "iitdelhilogo.ico")))
     window = MainWindow()
     window.show()
-    sys.exit(app.exec_())  # Corrected to sys.exit(
+    sys.exit(app.exec_())  # Corrected to sys.exit
     app.exec() 
