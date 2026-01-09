@@ -66,14 +66,22 @@ class MainWindow(QMainWindow):
     def instrument_bar(self):
         layout = QHBoxLayout()
 
-        layout.addWidget(QPushButton("Refresh"))
+        btn_refresh = QPushButton("Refresh")
+        btn_refresh.setIcon(QIcon("arrow.png"))
+        layout.addWidget(btn_refresh)
+
+        #layout.addWidget(QPushButton("Refresh"))
 
         
+        #self.port_box.setIcon(QIcon("password.png"))
         self.port_box = QComboBox()
         self.port_box.addItems(["COM1", "COM2", "COM3", "COM4"])
         layout.addWidget(self.port_box)
 
-        layout.addWidget(QPushButton("Connect"))
+
+        btn_connect = QPushButton("Connect")
+        btn_connect.setIcon(QIcon("plug.png"))
+        layout.addWidget(btn_connect)
         layout.addStretch()
         layout.addWidget(QLabel("Disconnected"))
 
@@ -186,9 +194,13 @@ class MainWindow(QMainWindow):
         layout = QHBoxLayout()
         layout.addWidget(QPushButton("Run: Slope"))
         layout.addWidget(QPushButton("Run: DC"))
-        layout.addWidget(QPushButton("Stop"))
+        btn_stop = QPushButton("Stop")
+        btn_stop.setIcon(QIcon("stop.png"))
+        layout.addWidget(btn_stop)
         layout.addStretch()
-        layout.addWidget(QPushButton("Save All Settings"))
+        btn_save = QPushButton("Save All Settings")
+        btn_save.setIcon(QIcon("save.png"))
+        layout.addWidget(btn_save)
         return layout
 
 
